@@ -1,0 +1,163 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/splash_bg_grad"
+    tools:context=".PickerActivity">
+
+    <ImageView
+        android:id="@+id/appPickupImageView"
+        android:layout_width="@dimen/_30sdp"
+        android:layout_height="@dimen/_30sdp"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="@dimen/_15sdp"
+        android:contentDescription="@string/image_desc"
+        app:srcCompat="@drawable/pic_pickup" />
+
+    <TextView
+        android:id="@+id/appTitleTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/appPickupImageView"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="@dimen/_10sdp"
+        android:fontFamily="@font/alegreya_sans_sc_bold"
+        android:text="@string/app_title"
+        android:textAllCaps="false"
+        android:textColor="@color/grey"
+        android:textSize="@dimen/_25sdp" />
+
+    <LinearLayout
+        android:id="@+id/pickerParentLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/appTitleTextView"
+        android:layout_marginTop="@dimen/_50sdp"
+        android:baselineAligned="false"
+        android:gravity="center"
+        android:orientation="horizontal"
+        android:weightSum="3">
+
+        <LinearLayout
+            android:id="@+id/cameraLayout"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:foreground="?attr/selectableItemBackgroundBorderless"
+            android:gravity="center"
+            android:orientation="vertical"
+            android:theme="@style/RippleEffectTheme"
+            tools:ignore="UseCompoundDrawables">
+
+            <ImageView
+                android:layout_width="@dimen/_40sdp"
+                android:layout_height="@dimen/_40sdp"
+                android:contentDescription="@string/image_desc"
+                app:srcCompat="@drawable/pic_camera" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_3sdp"
+                android:fontFamily="@font/courgette"
+                android:text="@string/app_title_camera"
+                android:textAlignment="center"
+                android:textAllCaps="false"
+                android:textColor="@color/grey"
+                android:textSize="@dimen/_11sdp" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/galleryLayout"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:foreground="?attr/selectableItemBackgroundBorderless"
+            android:gravity="center"
+            android:orientation="vertical"
+            android:theme="@style/RippleEffectTheme"
+            tools:ignore="UseCompoundDrawables">
+
+            <ImageView
+                android:layout_width="@dimen/_40sdp"
+                android:layout_height="@dimen/_40sdp"
+                android:contentDescription="@string/image_desc"
+                app:srcCompat="@drawable/pic_gallery" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_3sdp"
+                android:fontFamily="@font/courgette"
+                android:text="@string/app_title_gallery"
+                android:textAlignment="center"
+                android:textAllCaps="false"
+                android:textColor="@color/grey"
+                android:textSize="@dimen/_11sdp" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/docLayout"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:foreground="?attr/selectableItemBackgroundBorderless"
+            android:gravity="center"
+            android:orientation="vertical"
+            android:theme="@style/RippleEffectTheme"
+            tools:ignore="UseCompoundDrawables">
+
+            <ImageView
+                android:layout_width="@dimen/_40sdp"
+                android:layout_height="@dimen/_40sdp"
+                android:contentDescription="@string/image_desc"
+                app:srcCompat="@drawable/pic_doc" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_3sdp"
+                android:fontFamily="@font/courgette"
+                android:text="@string/app_title_doc"
+                android:textAlignment="center"
+                android:textAllCaps="false"
+                android:textColor="@color/grey"
+                android:textSize="@dimen/_11sdp" />
+        </LinearLayout>
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/sourceFilePathTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:fontFamily="@font/courgette"
+        android:textAlignment="center"
+        android:textAllCaps="false"
+        android:textColor="@color/grey"
+        android:textSize="@dimen/_13sdp" />
+
+
+    <TextView
+        android:id="@+id/previewButtonTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/sourceFilePathTextView"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="@dimen/_20sdp"
+        android:background="@drawable/preview_btn_bg"
+        android:fontFamily="@font/courgette"
+        android:foreground="?attr/selectableItemBackgroundBorderless"
+        android:paddingStart="@dimen/_25sdp"
+        android:paddingTop="@dimen/_5sdp"
+        android:paddingEnd="@dimen/_25sdp"
+        android:paddingBottom="@dimen/_5sdp"
+        android:text="@string/btn_preview"
+        android:textAlignment="center"
+        android:textAllCaps="false"
+        android:textColor="#B9B7B7"
+        android:textSize="@dimen/_15sdp"
+        android:theme="@style/RippleEffectTheme" />
+</RelativeLayout>

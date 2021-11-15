@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    style="@style/StyleRoot"
+    android:background="@color/black"
+    tools:ignore="ContentDescription">
+
+    <com.github.chrisbanes.photoview.PhotoView
+        android:id="@+id/scaleImageView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" />
+
+    <ImageView
+        android:id="@+id/videoCloseImageView"
+        android:layout_width="@dimen/_15sdp"
+        android:layout_height="@dimen/_15sdp"
+        android:layout_marginStart="@dimen/_15sdp"
+        android:layout_marginTop="@dimen/_10sdp"
+        android:contentDescription="@string/image_desc"
+        android:src="@drawable/ic_close" />
+
+    <LinearLayout
+        android:id="@+id/videoViewParentLayout"
+        style="@style/FView"
+        android:visibility="gone">
+
+        <RelativeLayout style="@style/VWView">
+
+            <com.google.android.exoplayer2.ui.PlayerView
+                android:id="@+id/player_view_lib"
+                style="@style/FView"
+                android:layout_gravity="center_vertical"
+                app:use_controller="true" />
+
+            <ImageView
+                android:id="@+id/image_play_pause"
+                style="@style/WView"
+                android:layout_centerInParent="true"
+                android:background="@drawable/shape_circle_lib"
+                android:padding="12dp"
+                android:src="@drawable/ic_video_play_lib"
+                android:visibility="gone" />
+
+        </RelativeLayout>
+    </LinearLayout>
+</androidx.coordinatorlayout.widget.CoordinatorLayout>
