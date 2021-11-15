@@ -1,4 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
+<!--
+  ~ /*
+  ~  * Created by https://github.com/braver-tool on 12/10/21, 08:30 PM
+  ~  * Copyright (c) 2021 . All rights reserved.
+  ~  * Last modified 15/11/21, 05:50 PM
+  ~  */
+  -->
+
 <resources>
     <color name="purple_200">#FFBB86FC</color>
     <color name="purple_500">#FF6200EE</color>

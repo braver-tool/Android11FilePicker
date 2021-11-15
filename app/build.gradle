@@ -1,3 +1,11 @@
+/*
+ *
+ *  * Created by https://github.com/braver-tool on 12/10/21, 08:30 PM
+ *  * Copyright (c) 2021 . All rights reserved.
+ *  * Last modified 15/11/21, 05:50 PM
+ *
+ */
+
 apply plugin: 'com.android.application'
 android {
     compileSdkVersion 30
@@ -34,5 +42,6 @@ dependencies {
     implementation 'com.intuit.sdp:sdp-android:1.0.6'
     implementation 'com.google.android.exoplayer:exoplayer:2.15.0'
     implementation 'com.github.chrisbanes:PhotoView:2.3.0'
-    implementation project(':picker')
+    //implementation project(':picker')
+    implementation 'com.github.braver-tool:Android11FilePicker:0.1.0'
 }
