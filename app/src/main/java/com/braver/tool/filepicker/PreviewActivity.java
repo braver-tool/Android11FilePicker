@@ -2,11 +2,14 @@
  *
  *  * Created by https://github.com/braver-tool on 12/10/21, 08:30 PM
  *  * Copyright (c) 2021 . All rights reserved.
- *  * Last modified 15/11/21, 05:50 PM
+ *  * Last modified 23/03/22, 09:45 AM
  *
  */
 
 package com.braver.tool.filepicker;
+
+import static com.braver.tool.picker.BraveFileUtils.PREVIEW_IMAGE_FILE_PATH;
+import static com.braver.tool.picker.BraveFileUtils.PREVIEW_VIDEO_FILE_PATH;
 
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
@@ -20,25 +23,22 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import com.github.chrisbanes.photoview.PhotoView;
 import com.google.android.exoplayer2.C;
+import com.google.android.exoplayer2.ExoPlayer;
 import com.google.android.exoplayer2.MediaItem;
 import com.google.android.exoplayer2.Player;
-import com.google.android.exoplayer2.SimpleExoPlayer;
 import com.google.android.exoplayer2.audio.AudioAttributes;
 import com.google.android.exoplayer2.source.MediaSource;
 import com.google.android.exoplayer2.source.ProgressiveMediaSource;
 import com.google.android.exoplayer2.ui.AspectRatioFrameLayout;
-import com.google.android.exoplayer2.ui.PlayerView;
+import com.google.android.exoplayer2.ui.StyledPlayerView;
 import com.google.android.exoplayer2.upstream.DataSource;
-import com.google.android.exoplayer2.upstream.DefaultDataSourceFactory;
+import com.google.android.exoplayer2.upstream.DefaultDataSource;
 
 import java.util.Objects;
 
-import static com.braver.tool.picker.BraveFileUtils.PREVIEW_IMAGE_FILE_PATH;
-import static com.braver.tool.picker.BraveFileUtils.PREVIEW_VIDEO_FILE_PATH;
-
 public class PreviewActivity extends AppCompatActivity implements View.OnClickListener {
-    private PlayerView playerView;
-    private SimpleExoPlayer videoPlayer;
+    private StyledPlayerView playerView;
+    private ExoPlayer videoPlayer;
     private ImageView imagePlayPause;
     private boolean isVideoEnded;
     private String imageFilePath, videoFilePath;
@@ -110,7 +110,7 @@ public class PreviewActivity extends AppCompatActivity implements View.OnClickLi
      **/
     private void initPlayer() {
         try {
-            videoPlayer = new SimpleExoPlayer.Builder(this).build();
+            videoPlayer = new ExoPlayer.Builder(this).build();
             playerView.setResizeMode(AspectRatioFrameLayout.RESIZE_MODE_FIT);
             playerView.setPlayer(videoPlayer);
             AudioAttributes audioAttributes = new AudioAttributes.Builder().setUsage(C.USAGE_MEDIA).setContentType(C.CONTENT_TYPE_MOVIE).build();
@@ -152,7 +152,7 @@ public class PreviewActivity extends AppCompatActivity implements View.OnClickLi
 
     private void buildMediaSource(Uri mUri) {
         try {
-            DataSource.Factory dataSourceFactory = new DefaultDataSourceFactory(this, getString(R.string.app_name));
+            DataSource.Factory dataSourceFactory = new DefaultDataSource.Factory(this);
             MediaSource mediaSource = new ProgressiveMediaSource.Factory(dataSourceFactory).createMediaSource(MediaItem.fromUri(mUri));
             videoPlayer.addMediaSource(mediaSource);
             videoPlayer.prepare();

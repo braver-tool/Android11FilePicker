@@ -3,7 +3,7 @@
   ~ /*
   ~  * Created by https://github.com/braver-tool on 12/10/21, 08:30 PM
   ~  * Copyright (c) 2021 . All rights reserved.
-  ~  * Last modified 15/11/21, 05:50 PM
+  ~  * Last modified 23/03/22, 09:45 AM
   ~  */
   -->
 
@@ -20,7 +20,7 @@
         android:layout_width="@dimen/_30sdp"
         android:layout_height="@dimen/_30sdp"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="@dimen/_15sdp"
+        android:layout_marginTop="@dimen/_25sdp"
         android:contentDescription="@string/image_desc"
         app:srcCompat="@drawable/pic_pickup" />
 

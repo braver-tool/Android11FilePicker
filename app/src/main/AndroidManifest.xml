@@ -1,9 +1,8 @@
-<?xml version="1.0" encoding="utf-8"?>
-<!--
+<?xml version="1.0" encoding="utf-8"?><!--
   ~ /*
   ~  * Created by https://github.com/braver-tool on 12/10/21, 08:30 PM
   ~  * Copyright (c) 2021 . All rights reserved.
-  ~  * Last modified 15/11/21, 05:50 PM
+  ~  * Last modified 23/03/22, 09:45 AM
   ~  */
   -->
 
@@ -14,9 +13,6 @@
     <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
     <uses-permission android:name="android.permission.CAMERA" />
     <uses-permission android:name="android.permission.RECORD_AUDIO" />
-    <uses-permission
-        android:name="android.permission.MANAGE_EXTERNAL_STORAGE"
-        tools:ignore="ScopedStorage" />
 
     <application
         android:allowBackup="true"
@@ -25,11 +21,10 @@
         android:requestLegacyExternalStorage="true"
         android:roundIcon="@mipmap/ic_app_logo"
         android:supportsRtl="true"
-        android:theme="@style/Theme.FilePicker">
+        android:theme="@style/Theme.App.Starting">
         <activity
-            android:name=".LaunchActivity"
-            android:exported="true"
-            android:theme="@style/SplashTheme">
+            android:name=".PickerActivity"
+            android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -37,10 +32,11 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".PickerActivity"
-            android:exported="true" />
-        <activity android:name="com.braver.tool.picker.CameraActivity" />
-        <activity android:name=".PreviewActivity" />
+            android:name="com.braver.tool.picker.CameraActivity"
+            android:theme="@style/Theme.FilePicker" />
+        <activity
+            android:name=".PreviewActivity"
+            android:theme="@style/Theme.FilePicker" />
 
         <provider
             android:name="androidx.core.content.FileProvider"

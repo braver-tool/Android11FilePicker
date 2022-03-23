@@ -4,13 +4,13 @@
   ~ /*
   ~  * Created by https://github.com/braver-tool on 12/10/21, 08:30 PM
   ~  * Copyright (c) 2021 . All rights reserved.
-  ~  * Last modified 15/11/21, 05:50 PM
+  ~  * Last modified 23/03/22, 09:45 AM
   ~  */
   -->
 
 <resources xmlns:tools="http://schemas.android.com/tools">
     <!-- Base application theme. -->
-    <style name="Theme.FilePicker" parent="Theme.MaterialComponents.DayNight.NoActionBar">
+    <style name="Theme.FilePicker" parent="Theme.AppCompat.NoActionBar">
         <!-- Primary brand color. -->
         <item name="colorPrimary">@color/app_color_primary_dark_light</item>
         <item name="colorPrimaryVariant">@color/app_color_dark</item>
@@ -19,13 +19,21 @@
         <item name="colorSecondary">@color/app_color_primary_light</item>
         <item name="colorSecondaryVariant">@color/app_color_primary_dark_light</item>
         <item name="colorOnSecondary">@color/app_color_dark</item>
-        <!-- Status bar color. -->
-        <item name="android:statusBarColor" tools:targetApi="l">?attr/colorPrimaryVariant</item>
-        <!-- Customize your theme here. -->
+        <item name="windowActionBar">false</item>
+        <item name="windowNoTitle">true</item>
+        <!--To disable dark mode-->
+        <item name="android:forceDarkAllowed" tools:targetApi="q">false</item>
     </style>
 
     <style name="SplashTheme" parent="Theme.MaterialComponents.DayNight.NoActionBar">
         <item name="android:windowBackground">@drawable/splash_bg_grad</item>
+    </style>
+
+    <style name="Theme.App.Starting" parent="Theme.SplashScreen">
+        <item name="windowSplashScreenBackground">@color/app_color_primary_dark_light</item>
+        <item name="windowSplashScreenAnimatedIcon">@drawable/splash_bg</item>
+        <!-- Switch to original app theme after splash screen -->
+        <item name="postSplashScreenTheme">@style/Theme.FilePicker</item>
     </style>
 
     <style name="RippleEffectTheme" parent="Theme.AppCompat">
