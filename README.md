@@ -1,11 +1,12 @@
 # Android FilePicker
+[![](https://jitpack.io/v/braver-tool/Android11FilePicker.svg)](https://jitpack.io/#braver-tool/Android11FilePicker)
 
 # Description
 
 This app can make the file picking process easy, which allows you to select Pictures, Videos, and Documents. Also, that has Capturing Photo/Video option.
 For using this library, you need to migrate your project to AndroidX(If your project is not migrated to AndroidX).
 
-This works without MANAGE_EXTERNAL_STORAGE permission Since it's very useful when you publish the app on Google Play Store.
+This works without MANAGE_EXTERNAL_STORAGE permission Since it's very useful when you publish the app on Google Plsy Strore.
 
 
 <img src="app_demo_pic.jpg" width="30%" height="30%"/>
@@ -51,7 +52,7 @@ Then, Add this in your root `build.gradle` file (app level gradle file):
 - To Preview your selected images using 'PhotoView'
 - To Preview your selected videos using exoplayer
 - Can pick any non-media files like PDF,Doc,Txt files without using MANAGE_EXTERNAL_STORAGE permission
-- Supports up to Android 12 and SplashScreen API
+- Supports upto Android 12 and SplashScreen API
 
 This library compatible with Android 6 and above
 
