@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?><!--
+  ~ /*
+  ~  * Created by https://github.com/braver-tool on 12/10/21, 08:30 PM
+  ~  * Copyright (c) 2021 . All rights reserved.
+  ~  * Last modified 23/03/22, 09:45 AM
+  ~  */
+  -->
+
+
+<layer-list xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content">
+    
+    <item
+        android:width="80dp"
+        android:height="80dp"
+        android:gravity="center">
+        <bitmap
+            android:gravity="fill_horizontal|fill_vertical"
+            android:src="@drawable/ic_splash_file" />
+    </item>
+</layer-list>
